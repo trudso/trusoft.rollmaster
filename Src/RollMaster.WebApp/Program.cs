@@ -1,7 +1,10 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using RollMaster.Core;
+using RollMaster.Core.Web;
 using RollMaster.WebApp;
 using RollMaster.WebApp.Routes;
+using Systems.WorldOfDarkness;
 using TruSoft.StdLib;
 using TruSoft.StdLib.DependencyInjection.Autofac;
 
@@ -26,6 +29,8 @@ public class Program
         	new AutofacBuilder(b)
 		        // Backend
 		        .WithAssemblyRegistrations(typeof(StdLibModule).Assembly)
+		        .WithAssemblyRegistrations(typeof(RollMasterCoreModule).Assembly)
+		        .WithAssemblyRegistrations(typeof(WorldOfDarknessModule).Assembly)
 		        
 		        // Frontend
 		        .WithAssemblyRegistrations(typeof(RollMasterWebAppModule).Assembly)

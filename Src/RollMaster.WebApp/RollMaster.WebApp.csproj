@@ -8,10 +8,18 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\StdLib\Src\TruSoft.StdLib\TruSoft.StdLib.csproj" />
+      <ProjectReference Include="..\RollMaster.Core\RollMaster.Core.csproj" />
+      <ProjectReference Include="..\Systems.WorldOfDarkness\Systems.WorldOfDarkness.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
+      <Folder Include="Views\Components\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\Pages\CreateCharacterPageModel.cs">
+        <DependentUpon>CreateCharacterPagePage.razor</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

@@ -1,20 +1,20 @@
 ﻿using TruSoft.StdLib.DependencyInjection;
 
-namespace RollMaster.WebApp.Routes;
+namespace RollMaster.Core.Web;
 
 [Injectable(Lifetime = Lifetime.PerScope)]
 public class RouteRegister
 {
-    private readonly IEnumerable<IRoute> _routes;
+    private readonly IEnumerable<IHttpRouter> _httpRouters;
 
-    public RouteRegister(IEnumerable<IRoute> routes)
+    public RouteRegister(IEnumerable<IHttpRouter> httpRouters)
     {
-        _routes = routes;
+        _httpRouters = httpRouters;
     }
 
     public void Register(WebApplication app)
     {
-        foreach (var route in _routes)
+        foreach (var route in _httpRouters)
         {
             route.Map( app ); 
         }

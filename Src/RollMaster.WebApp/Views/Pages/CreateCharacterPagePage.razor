@@ -1,0 +1,22 @@
+﻿@using RollMaster.Core.Views.Layout
+@layout MainLayout
+
+<div class="grid-main">
+    <main class="container">
+        <h4>Choose your role playing system:</h4>
+        <details class="dropdown" style="width: 200px">
+            <summary>System</summary>
+            <ul>
+                @foreach (var sysInfo in Model.RolePlayingSystemInfos)
+                {
+                    <li hx-get="/new-character/htmx/character-creation/@sysInfo.RolePlayingSystemId">@sysInfo.RolePlayingSystemName</li>
+                }
+            </ul>
+        </details>
+    </main>
+</div>
+
+@code {
+    [Parameter]
+    public CreateCharacterPageModel? Model { get; set; }
+}

@@ -1,20 +1,34 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
-using RollMaster.WebApp.Views.Components;
+using RollMaster.Core.System;
 using RollMaster.WebApp.Views.Pages;
 using TruSoft.StdLib.DependencyInjection;
 
 namespace RollMaster.WebApp.Controllers;
 
 [Injectable(Lifetime = Lifetime.PerScope)]
-public class HomeController
+public class HomeController(IEnumerable<IRolePlayingSystem> rolePlayingSystems)
 {
     public IResult OnGetHomePage(HttpContext context)
     {
         return new RazorComponentResult(typeof(Home));
     }
 
-    public IResult OnGetHtmxTestComponent(HttpContext context)
+    public IResult OnGetCreateCharacterPage(HttpContext context)
     {
-        return new RazorComponentResult(typeof(HtmxTestComponent));
+        var model = new CreateCharacterPageModel(rolePlayingSystems.Select(s => s.RolePlayingSystemInfo));
+        return new RazorComponentResult(typeof(CreateCharacterPagePage), new Dictionary<string, object?>()
+        {
+            { "model", model }
+        });
+    }
+    
+    public IResult OnRedirectToCharacterCreationPage(HttpContext context, String systemId )
+    {
+        var system = rolePlayingSystems.SingleOrDefault( s => s.RolePlayingSystemInfo.RolePlayingSystemId == systemId );
+        if ( system == null )
+            throw new ArgumentException("No role playing system found with id " + systemId );
+
+        context.Response.Headers.Append("HX-Redirect", system.CreateCharacterPagePath);
+        return Results.Empty;
     }
 }
