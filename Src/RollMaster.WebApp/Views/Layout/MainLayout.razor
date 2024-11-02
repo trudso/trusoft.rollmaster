@@ -1,0 +1,63 @@
+﻿@inherits LayoutComponentBase
+
+<html lang="en" data-theme="dark">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@picocss/pico@@2/css/pico.min.css"/>
+        <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+        <style>
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+            "header header header"
+            "left main right"
+            "footer footer footer";
+                grid-template-columns: max(200px, 25%) 1fr auto;
+                grid-template-rows: 80px 1fr 80px;
+            }
+
+            .grid-header {
+                grid-area: header;
+                /*background-color: lightblue;*/
+            }
+
+
+            .grid-left {
+                grid-area: left;
+                /*background-color: lightpink;*/
+
+            }
+
+            .grid-right {
+                grid-area: right;
+                /*background-color: lightgoldenrodyellow;*/
+            }
+
+            .grid-main {
+                grid-area: main;
+                /*background-color: lightgray;*/
+            }
+
+            .grid-footer {
+                grid-area: footer;
+                /*background-color: lightseagreen;*/
+            }
+        </style>
+        <title>RollMaster</title>
+    </head>
+    
+    <body>
+        <div class="grid-container">
+            <div class="grid-header">
+                <nav>
+                    <ul><li><strong>Test</strong></li></ul>
+                    <ul><li><a href="#" class="secondary">Something 1</a></li>
+                        <li><a href="#" class="secondary">Something 2</a></li></ul>
+                </nav>
+            </div>
+            @Body
+            <div class="grid-footer">
+                <footer>Copyright TruSoft 2024</footer>
+            </div>
+        </div>    
+    </body>
+</html>
