@@ -1,0 +1,5 @@
+﻿modulesDirectory: Modules
+modules:
+  Core: {}
+  ChangeSet:
+    assembly: Phanes.ChangeSet.dll

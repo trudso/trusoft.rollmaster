@@ -17,8 +17,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Views\Pages\CreateCharacterPageModel.cs">
-        <DependentUpon>CreateCharacterPagePage.razor</DependentUpon>
+      <Compile Update="Views\Pages\CharacterCreationModel.cs">
+        <DependentUpon>CharacterCreationPage.razor</DependentUpon>
       </Compile>
     </ItemGroup>
 

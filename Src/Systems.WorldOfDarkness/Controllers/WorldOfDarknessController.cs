@@ -7,8 +7,8 @@ namespace Systems.WorldOfDarkness.Controllers;
 [Injectable( Lifetime = Lifetime.PerScope)]
 public class WorldOfDarknessController
 {
-    public IResult OnGetCreateCharacterPage(HttpContext context)
+    public IResult OnGetCharacterCreationPage(HttpContext context)
     {
-        return new RazorComponentResult(typeof(CreateCharacterPage));
+        return new RazorComponentResult(typeof(CharacterCreationPage));
     }
 }

@@ -27,4 +27,8 @@
       <AdditionalFiles Include="Views\Layout\MainLayout.razor" />
     </ItemGroup>
 
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+      <Exec Command="$(SolutionDir)Bin/Phanes/Phanes.CLI -i $(ProjectDir)PhanesModels/Rollmaster-core-model.yaml -c $(ProjectDir)PhanesModels/Rollmaster-core-configuration.yaml -o $(ProjectDir)CodeGen" />
+    </Target>
+
 </Project>

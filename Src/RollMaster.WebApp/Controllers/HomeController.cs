@@ -13,10 +13,10 @@ public class HomeController(IEnumerable<IRolePlayingSystem> rolePlayingSystems)
         return new RazorComponentResult(typeof(Home));
     }
 
-    public IResult OnGetCreateCharacterPage(HttpContext context)
+    public IResult OnGetCharacterCreationPage(HttpContext context)
     {
-        var model = new CreateCharacterPageModel(rolePlayingSystems.Select(s => s.RolePlayingSystemInfo));
-        return new RazorComponentResult(typeof(CreateCharacterPagePage), new Dictionary<string, object?>()
+        var model = new CharacterCreationModel(rolePlayingSystems.Select(s => s.RolePlayingSystemInfo));
+        return new RazorComponentResult(typeof(CharacterCreationPage), new Dictionary<string, object?>()
         {
             { "model", model }
         });

@@ -87,4 +87,8 @@
       <Folder Include="wwwroot\" />
     </ItemGroup>
 
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+      <Exec Command="$(SolutionDir)Bin/Phanes/Phanes.CLI -i $(ProjectDir)PhanesModels/System-wod-model.yaml -o $(ProjectDir)CodeGen" />
+    </Target>
+
 </Project>

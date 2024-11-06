@@ -1,0 +1,52 @@
+﻿packages:
+  RollMaster.Core:
+    enumerations: {}
+      
+    models:
+      CharacterSource:
+        inherits:
+          - package: TruSoft.StdLib.EventSourcing
+            name: IEventSource
+            genericArguments:
+              - string
+              - CharacterVersion
+        attributes:
+          Document:
+            package: TruSoft.StdLib.DataSource
+            values:
+              Collection: '"CharacterSources"'
+        fields:
+          RolePlayingSystemId: 
+            type: String
+      CharacterVersion:
+        features:
+          ChangeSet: { }
+        inherits:
+          - package: TruSoft.StdLib.EventSourcing
+            name: IEventSourceVersion
+        attributes:
+          Document:
+            package: TruSoft.StdLib.DataSource
+            values:
+              Collection: '"CharacterVersions"'
+        fields:
+          Id:
+            features:
+              NoChangeSet: { }
+            type:
+              name: Guid
+              nullable: false
+          Name:
+            type: String
+        methods:
+          GetId:
+            returnType:
+              name: IComparable
+            sourceCode: return Id;
+      
+      CharacterEvent:
+        inherits:
+          - name: IEventSourceEvent
+            package: TruSoft.StdLib.EventSourcing
+            genericArguments:
+              - CharacterVersion

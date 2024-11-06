@@ -2,7 +2,7 @@
 
 namespace RollMaster.WebApp.Views.Pages;
 
-public class CreateCharacterPageModel(IEnumerable<RolePlayingSystemInfo> rolePlayingSystemInfos)
+public class CharacterCreationModel(IEnumerable<RolePlayingSystemInfo> rolePlayingSystemInfos)
 {
     public IEnumerable<RolePlayingSystemInfo> RolePlayingSystemInfos { get; } = rolePlayingSystemInfos;
 }

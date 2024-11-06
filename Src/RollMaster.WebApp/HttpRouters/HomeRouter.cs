@@ -17,7 +17,7 @@ public class HomeRouter : IHttpRouter
     public void Map(WebApplication app)
     {
         app.MapGet("/", _homeController.OnGetHomePage);
-        app.MapGet("/new-character", _homeController.OnGetCreateCharacterPage);
+        app.MapGet("/new-character", _homeController.OnGetCharacterCreationPage);
         app.MapGet("/new-character/htmx/character-creation/{systemId}", _homeController.OnRedirectToCharacterCreationPage);
     }
 }

@@ -9,6 +9,6 @@ public class WorldOfDarknessRoutes(WorldOfDarknessController controller) : IHttp
 {
     public void Map(WebApplication app)
     {
-        app.MapGet("/wod-v5/new-character", controller.OnGetCreateCharacterPage);
+        app.MapGet("/wod-v5/new-character", controller.OnGetCharacterCreationPage);
     }
 }
