@@ -1,5 +1,23 @@
 ﻿packages:
   System.WorldOfDarkness:
-    enumerations: {}
-    models: {}
-      
+    models: 
+      WodCharacterVersion:
+        inherits: 
+          - package: RollMaster.Core
+            name: ICharacterVersion
+        features:
+          ChangeSet: {}
+        fields:
+          Id:
+            features:
+              NoChangeSet: {}
+            type: 
+              name: Guid
+              nullable: false
+          Name: 
+            type: String
+        methods:
+          GetId:
+            returnType:
+              name: IComparable
+            sourceCode: return Id; 

@@ -9,7 +9,7 @@
             name: IEventSource
             genericArguments:
               - string
-              - CharacterVersion
+              - ICharacterVersion
         attributes:
           Document:
             package: TruSoft.StdLib.DataSource
@@ -18,9 +18,8 @@
         fields:
           RolePlayingSystemId: 
             type: String
-      CharacterVersion:
-        features:
-          ChangeSet: { }
+      ICharacterVersion:
+        interface: true
         inherits:
           - package: TruSoft.StdLib.EventSourcing
             name: IEventSourceVersion
@@ -31,22 +30,15 @@
               Collection: '"CharacterVersions"'
         fields:
           Id:
-            features:
-              NoChangeSet: { }
             type:
               name: Guid
               nullable: false
           Name:
             type: String
-        methods:
-          GetId:
-            returnType:
-              name: IComparable
-            sourceCode: return Id;
       
       CharacterEvent:
         inherits:
           - name: IEventSourceEvent
             package: TruSoft.StdLib.EventSourcing
             genericArguments:
-              - CharacterVersion
+              - ICharacterVersion
