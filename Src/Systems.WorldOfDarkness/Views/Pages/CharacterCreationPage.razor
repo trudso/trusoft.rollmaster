@@ -1,4 +1,5 @@
 ﻿@using RollMaster.Core.Views.Layout
+@using Systems.WorldOfDarkness.Views.Components
 @layout MainLayout
 
 <div class="grid-left">
@@ -11,10 +12,12 @@
 </div>
 <div class="grid-main">
     <main class="container">
-        <h4>World of Darkness character creation</h4>
+        <VampireCharacterSheet Model=@(Model as VampireCharacterSheetModel) />
+        <button>Create</button>
     </main>
+    
 </div>
 
 @code {
-
+    [Parameter] public ICharacterSheetModel Model { get; set; }
 }

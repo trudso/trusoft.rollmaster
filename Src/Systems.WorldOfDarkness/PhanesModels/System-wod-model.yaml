@@ -1,5 +1,9 @@
 ﻿packages:
   System.WorldOfDarkness:
+    enumerations:
+      WodSubSystem:
+        constants:
+          Vampire: {}
     models: 
       WodCharacterVersion:
         inherits: 
@@ -16,6 +20,11 @@
               nullable: false
           Name: 
             type: String
+          SubSystem:
+            type: 
+              name: WodSubSystem
+              primitive: true
+              nullable: true
         methods:
           GetId:
             returnType:

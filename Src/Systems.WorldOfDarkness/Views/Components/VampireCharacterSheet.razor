@@ -1,0 +1,9 @@
+﻿<h3>Vampire Character Sheet</h3>
+<div>
+    <span>Name</span>
+    <input type="text" name="name" value="@Model?.Name" placeholder="Enter Character Name" aria-label="Text">
+</div>
+
+@code {
+    [Parameter] public VampireCharacterSheetModel Model { get; set; } = new();
+}

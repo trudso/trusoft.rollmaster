@@ -84,8 +84,13 @@
 
     <ItemGroup>
       <Folder Include="CodeGen\" />
-      <Folder Include="Views\Components\" />
       <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\Components\VampireCharacterSheetModel.cs">
+        <DependentUpon>VampireCharacterSheet.razor</DependentUpon>
+      </Compile>
     </ItemGroup>
 
     <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
