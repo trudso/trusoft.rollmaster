@@ -12,8 +12,10 @@
 </div>
 <div class="grid-main">
     <main class="container">
-        <VampireCharacterSheet Model=@(Model as VampireCharacterSheetModel) />
-        <button>Create</button>
+        <form hx-post="/wod-v5/new-character" hx-ext="json-enc">
+            <VampireCharacterSheet Model=@(Model as VampireCharacterSheetModel)/>
+            <button type="submit">Create</button>
+        </form>
     </main>
     
 </div>

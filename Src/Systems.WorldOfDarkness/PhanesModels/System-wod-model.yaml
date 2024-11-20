@@ -20,7 +20,7 @@
               nullable: false
           Name: 
             type: String
-          SubSystem:
+          StringSubSystem:
             type: 
               name: WodSubSystem
               primitive: true
