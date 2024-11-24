@@ -1,7 +1,6 @@
 ﻿packages:
   RollMaster.Core:
     enumerations: {}
-      
     models:
       CharacterSource:
         inherits:

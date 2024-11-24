@@ -1,17 +1,13 @@
 ﻿using System.WorldOfDarkness;
-using TruSoft.StdLib.ChangeSets;
-using TruSoft.StdLib.Exceptions;
+using Phanes.ChangeSet;
 
 namespace Systems.WorldOfDarkness.Test.ChangeSets;
 
-public class CharacterMergeConflictTest
+public class CharacterRebasingTest
 {
     [Fact]
     public void NameChangeConflictTest()
     {
-        var conflictLogic = new ChangeConflictLogic();
-        var rebaseLogic = new ChangeSetRebaseLogic(conflictLogic);
-        
         var version1 = new WodCharacterVersion { Name = "BaseName" };
         var user1Change = new WodCharacterVersionChangeSet(version1);
         var user2Change = new WodCharacterVersionChangeSet(version1); 
@@ -23,14 +19,14 @@ public class CharacterMergeConflictTest
         var user1Version = user1Change.Apply();
 
         // attempt rebasing
-        Assert.Throws<UnresolvedConflictsException>(() => rebaseLogic.Rebase(user2Change, user1Version, []));
-        var conflicts = conflictLogic.FindConflicts(user2Change, user1Version).ToList();
+        Assert.Throws<UnresolvedConflictsException>(() => user2Change.Rebase(user1Version, []));
+        var conflicts = user2Change.GetConflicts(user1Version).ToList();
         Assert.Single(conflicts);
         Assert.IsType<ValueChangeConflict>(conflicts.Single());
         
         // resolve conflicts with local winner
         var c1 = (ValueChangeConflict)conflicts.Single();
-        var user2VersionRebased = rebaseLogic.Rebase(user2Change, user1Version, [new LocalWinnerConflictResolution() {
+        var user2VersionRebased = user2Change.Rebase(user1Version, [new LocalWinnerConflictResolution() {
             ChangeId = c1.ChangeId,
             RemoteValue = c1.RemoteValue,
             LocalBaseValue = c1.LocalBaseValue

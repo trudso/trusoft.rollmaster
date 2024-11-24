@@ -20,9 +20,8 @@ public class WorldOfDarknessController( )
     public IResult OnPostCharacterCreationPage(HttpContext context, [FromBody] VampireCharacterSheetModel model)
     {
         var characterId = Guid.NewGuid(); // created character
-         
-        
-        
+       
+        // TODO[mt]: create character
         
         context.Response.Headers.Append("HX-Redirect", $"/characters/{characterId}");
         return Results.Empty;
