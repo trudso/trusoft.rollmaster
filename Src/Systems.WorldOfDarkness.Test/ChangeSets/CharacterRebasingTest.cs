@@ -8,9 +8,9 @@ public class CharacterRebasingTest
     [Fact]
     public void NameChangeConflictTest()
     {
-        var version1 = new WodCharacterVersion { Name = "BaseName" };
-        var user1Change = new WodCharacterVersionChangeSet(version1);
-        var user2Change = new WodCharacterVersionChangeSet(version1); 
+        var version1 = new VampireCharacterVersion { Name = "BaseName" };
+        var user1Change = new VampireCharacterVersionChangeSet(version1);
+        var user2Change = new VampireCharacterVersionChangeSet(version1); 
         
         user1Change.Name.Set( "User1_Name");
         user2Change.Name.Set( "User2_Name");

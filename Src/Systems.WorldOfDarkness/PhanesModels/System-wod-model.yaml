@@ -5,12 +5,12 @@
         constants:
           Vampire: {}
     models: 
-      WodCharacterVersion:
+      VampireCharacterVersion:
+        features:
+          ChangeSet: {}
         inherits: 
           - package: RollMaster.Core
             name: ICharacterVersion
-        features:
-          ChangeSet: {}
         fields:
           Id:
             features:
@@ -20,13 +20,67 @@
               nullable: false
           Name: 
             type: String
-          StringSubSystem:
-            type: 
-              name: WodSubSystem
-              primitive: true
-              nullable: true
+          Chronicle:
+            type: String
+          Sire:
+            type: String
+          Concept:
+            type: String
+          Ambition:
+            type: String
+          Desire:
+            type: String
+          Predator:
+            type: String
+          Clan:
+            type: String
+          Generation:
+            type: String
+          Attributes:
+            type: VampireAttributes
         methods:
           GetId:
             returnType:
               name: IComparable
             sourceCode: return Id; 
+            
+      VampireAttributes:
+        features:
+          ChangeSet: {}
+        fields:
+          Strength:
+            type: 
+              name: int
+              nullable: true
+          Dexterity:
+            type:
+              name: int
+              nullable: true
+          Stamina:
+            type:
+              name: int
+              nullable: true
+          Charisma:
+            type:
+              name: int
+              nullable: true
+          Manipulation:
+            type:
+              name: int
+              nullable: true
+          Composure:
+            type:
+              name: int
+              nullable: true
+          Intelligence:
+            type:
+              name: int
+              nullable: true
+          Wits:
+            type:
+              name: int
+              nullable: true
+          Resolve:
+            type:
+              name: int
+              nullable: true
