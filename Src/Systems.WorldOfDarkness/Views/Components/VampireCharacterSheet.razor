@@ -1,9 +1,280 @@
-﻿<h3>Vampire Character Sheet</h3>
-<div>
-    <span>Name</span>
-    <input type="text" name="name" value="@Model?.Name" placeholder="Enter Character Name" aria-label="Text">
-    <input type="text" name="player" value="@Model?.Player" placeholder="Player name" aria-label="Text">
+﻿<h1>Character Sheet</h1>
+
+<div id="character-info">
+    <table>
+        <tr>
+            <th class="label">Name:</th>
+            <td><input type="text" id="name" value="" placeholder="Character name"></td>
+        </tr>
+        <tr>
+            <th class="label">Concept:</th>
+            <td><input type="text" id="concept" value=""></td>
+        </tr>
+        <tr>
+            <th class="label">Chronicle:</th>
+            <td><input type="text" id="chronicle" value=""></td>
+        </tr>
+        <tr>
+            <th class="label">Ambition:</th>
+            <td><input type="text" id="ambition" value=""></td>
+        </tr>
+        <tr>
+            <th class="label">Clan:</th>
+            <td><input type="text" id="clan" value="" placeholder="Clan name"></td>
+        </tr>
+    </table>
 </div>
+
+<h2>Attributes</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Physical:</td>
+        <td><input type="number" id="physical" value=""></td>
+    </tr>
+    <tr>
+        <td>Social:</td>
+        <td><input type="number" id="social" value=""></td>
+    </tr>
+    <tr>
+        <td>Mental:</td>
+        <td><input type="number" id="mental" value=""></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Attributes (Detailed)</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Strength:</td>
+        <td><input type="number" id="strength" value=""></td>
+    </tr>
+    <tr>
+        <td>Charisma:</td>
+        <td><input type="number" id="charisma" value=""></td>
+    </tr>
+    <tr>
+        <td>Intelligence:</td>
+        <td><input type="number" id="intelligence" value=""></td>
+    </tr>
+    <tr>
+        <td>Dexterity:</td>
+        <td><input type="number" id="dexterity" value=""></td>
+    </tr>
+    <tr>
+        <td>Manipulation:</td>
+        <td><input type="number" id="manipulation" value=""></td>
+    </tr>
+    <tr>
+        <td>Wits:</td>
+        <td><input type="number" id="wits" value=""></td>
+    </tr>
+    <tr>
+        <td>Stamina:</td>
+        <td><input type="number" id="stamina" value=""></td>
+    </tr>
+    <tr>
+        <td>Composure:</td>
+        <td><input type="number" id="composure" value=""></td>
+    </tr>
+    <tr>
+        <td>Resolve:</td>
+        <td><input type="number" id="resolve" value=""></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Health and Willpower</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Health:</td>
+        <td><input type="number" id="health" value=""></td>
+    </tr>
+    <tr>
+        <td>Willpower:</td>
+        <td><input type="number" id="willpower" value=""></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Skills</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Athletics:</td>
+        <td><input type="number" id="athletics" value=""></td>
+    </tr>
+    <tr>
+        <td>Brawl:</td>
+        <td><input type="number" id="brawl" value=""></td>
+    </tr>
+    <tr>
+        <td>Craft:</td>
+        <td><input type="number" id="craft" value=""></td>
+    </tr>
+    <tr>
+        <td>Drive:</td>
+        <td><input type="number" id="drive" value=""></td>
+    </tr>
+    <tr>
+        <td>Firearms:</td>
+        <td><input type="number" id="firearms" value=""></td>
+    </tr>
+    <tr>
+        <td>Melee:</td>
+        <td><input type="number" id="melee" value=""></td>
+    </tr>
+    <tr>
+        <td>Larceny:</td>
+        <td><input type="number" id="larceny" value=""></td>
+    </tr>
+    <tr>
+        <td>Stealth:</td>
+        <td><input type="number" id="stealth" value=""></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Attributes (Detailed)</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Athletics:</td>
+        <td><input type="number" id="athletics" value=""></td>
+    </tr>
+    <tr>
+        <td>Brawl:</td>
+        <td><input type="number" id="brawl" value=""></td>
+    </tr>
+    <tr>
+        <td>Craft:</td>
+        <td><input type="number" id="craft" value=""></td>
+    </tr>
+    <tr>
+        <td>Drive:</td>
+        <td><input type="number" id="drive" value=""></td>
+    </tr>
+    <tr>
+        <td>Firearms:</td>
+        <td><input type="number" id="firearms" value=""></td>
+    </tr>
+    <tr>
+        <td>Melee:</td>
+        <td><input type="number" id="melee" value=""></td>
+    </tr>
+    <tr>
+        <td>Larceny:</td>
+        <td><input type="number" id="larceny" value=""></td>
+    </tr>
+    <tr>
+        <td>Stealth:</td>
+        <td><input type="number" id="stealth" value=""></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Experience and Skills</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Experience:</td>
+        <td><input type="number" id="experience" value=""></td>
+    </tr>
+    <tr>
+        <td>Skills:</td>
+        <td><input type="number" id="skills" value=""></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Attributes (Detailed)</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Athletics:</td>
+        <td><input type="number" id="athletics" value=""></td>
+    </tr>
+    <tr>
+        <td>Brawl:</td>
+        <td><input type="number" id="brawl" value=""></td>
+    </tr>
+    <tr>
+        <td>Craft:</td>
+        <td><input type="number" id="craft" value=""></td>
+    </tr>
+    <tr>
+        <td>Drive:</td>
+        <td><input type="number" id="drive" value=""></td>
+    </tr>
+    <tr>
+        <td>Firearms:</td>
+        <td><input type="number" id="firearms" value=""></td>
+    </tr>
+    <tr>
+        <td>Melee:</td>
+        <td><input type="number" id="melee" value=""></td>
+    </tr>
+    <tr>
+        <td>Larceny:</td>
+        <td><input type="number" id="larceny" value=""></td>
+    </tr>
+    <tr>
+        <td>Stealth:</td>
+        <td><input type="number" id="stealth" value=""></td>
+    </tr>
+    </tbody>
+</table>
 
 @code {
     [Parameter] public VampireCharacterSheetModel Model { get; set; } = new();
